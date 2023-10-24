@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: 'playFair';
+  src: url('./assets/Fonts/PlayfairDisplay-VariableFont_wght.ttf');
+  /* Add other font formats if necessary */
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'absolutHeadline';
+  src: url('./assets/Fonts/absolut-headline.woff.ttf');
+  /* Add other font formats if necessary */
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'fontMifz';
+  src: url('./assets/Fonts/font-mfizz.ttf');
+  /* Add other font formats if necessary */
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'gloucester';
+  src: url('./assets/Fonts/gloucester.ttf');
+  /* font-weight: normal;
+  font-style: normal; */
+}
+@font-face {
+  font-family: 'quantrh';
+  src: url('./assets/Fonts/quantrh.ttf');
+  /* font-weight: normal;
+  font-style: normal; */
+}
+@font-face {
+  font-family: 'AMERTO';
+  src: url('./assets/Fonts/AMERTO__.TTF');
+  /* font-weight: normal;
+  font-style: normal; */
+}
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+body{
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+#canvas {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+#canvas1 {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: red;
+  transform-origin: 0%;
+}
