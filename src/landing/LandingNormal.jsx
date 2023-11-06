@@ -16,17 +16,24 @@ import DevIconNormal from '../assets/Fonts/devicon.ttf'
 import Lottie from "lottie-react";
 import designAnimation from '../assets/Video/i5zjWBvIVT.json'
 import {FiExternalLink } from 'react-icons/fi';
+import shadiem from '../assets/Images/shadiem.png';
+import itdb from '../assets/Images/itdb.png';
+import habtamuImg from '../assets/Images/habtamu.png';
+import ethioDat from '../assets/Images/ethioDat.png';
+import threeGrave from '../assets/Images/threeGrave.png';
+import A2SV from '../assets/Images/A2SV.png'
+
 
 gsap.registerPlugin(ScrollTrigger);
 const screenHeight = window.innerHeight
 
 const Socials = ()=>{
     return(
-        <div className='absolute flex flex-col gap-6 bottom-20 w-20 px-10 text-3xl'>
-            <AiFillGithub />
-            <AiFillLinkedin />
-            <AiFillMail />
-            <BsTelegram />
+        <div className='hidden absolute md:flex flex-col gap-6 bottom-20 w-20 px-10 text-3xl z-10'>
+            <a href='https://github.com/abelops' target='blank'><AiFillGithub /></a>
+            <a href='https://www.linkedin.com/in/abel-getahun' target='blank'><AiFillLinkedin /></a>
+            <a href='mailto:abelgetahun55@gmail.com' target='blank'><AiFillMail /></a>
+            <a href='https://t.me/abelgetahun' target='blank'><BsTelegram /></a>
         </div>
     )
 }
@@ -40,19 +47,23 @@ const NavScroll = ()=>{
     });
     return (
         <div>
-            <div className='fixed bottom-3 px-10 h-20 right-20 left-20 overflow-hidden rounded-3xl bg-black border-2 border-[#282e38]'>
+            <div className='fixed bottom-3 px-10 h-20 right-4 left-4 md:right-20 md:left-20 overflow-hidden rounded-3xl bg-black border-2 border-[#282e38]'>
                 <motion.div className="absolute h-full bg-[#282e38] origin-[0%] right-0 left-0 z-10" style={{ scaleX }} />
                 <div className='flex items-center h-full justify-between'>
-                    <div className='z-20'>
-                        Personal Portifolio
+                    <div className='z-20 hidden md:block'>
+                        <a href="#top">
+                            Personal Portifolio
+                        </a>
                     </div>
                     <div className='flex gap-20 z-20'>
-                        <a>About</a>
-                        <a>Skills</a>
-                        <a>Works</a>
+                        <a href='#about'>About</a>
+                        <a href='#services'>Services</a>
+                        <a href="#works">Works</a>
                     </div>
                     <div className='z-20'>
-                        <button className='flex justify-center items-center rounded-md border-2 h-12 w-32 border-slate-100'>Contact Me</button>
+                        <a href="#contact">
+                            <button className='flex justify-center items-center rounded-md border-2 h-12 w-32 border-slate-100'>Contact Me</button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -109,9 +120,9 @@ const CustomCursor = ()=>{
       }, []);
       
       
-    // useEffect(()=>{
-    //     window.addEventListener('mousemove', MoveCursor)
-    // },[])
+    useEffect(()=>{
+        window.addEventListener('mousemove', MoveCursor)
+    },[])
     return(
         <div ref={divRef} className={`cursor absolute h-12 w-12 rounded-full mix-blend-multiply block !z-30 ${isIntersecting ? ' bg-red-600 h-52 w-52' : "bg-cyan-600"}`} style={{transition: "height 0.1s ease-in-out, width 0.1s ease-in-out"}}>
   
@@ -122,14 +133,14 @@ const CustomCursor = ()=>{
 
 const MainAbout = ()=>{
     return(
-        <div className='w-full h-screen flex flex-col gap-4 justify-center px-32'>
+        <div className='w-full mt-[-50px] md:mt-0 h-auto flex flex-col gap-4 justify-center lg:px-32' id="about">
         
-            <h1 className='font-mono font-bold text-cyan-600 ml-16'>About me</h1>
+            <h1 className='font-mono font-bold text-cyan-600 ml-4 md:ml-16'>About me</h1>
         
             {/* <div className=' text-white py-4 mt-4 font-absolutHeadline font-bold text-7xl'>                
                 <CustomReveal delay={1} content={"I am a developer based in Addis Ababa, Ethiopia and I enjoy creating immersive experinces."} />
             </div> */}
-            <div className=' text-white py-4 mt-4 font-playFair font-bold text-6xl flex w-full justify-center'>                
+            <div className=' text-white py-4 mt-4 font-playFair font-bold text-3xl md:text-6xl flex w-full ml-6 md:ml-14'>                
                 <ScrollOpacityComponent content='I am a full stack software developer specializing in frontend development and I enjoy creating immersive experinces. I also enjoy problem solving with programming and I have solved 450+ problems on leetcode.' />
             </div>
         </div>
@@ -209,7 +220,7 @@ function LandingNormal() {
                 </div>
             </div>
 
-            <div className='relative'>
+            <div className='relative w-full'>
                 <AboutSection />
                 <MainAbout />
                 <ServiceSection serviceSlider={serviceSlider}/>
@@ -226,7 +237,7 @@ function LandingNormal() {
 const AboutSection = ()=>{
     return(
         <div className={`w-full h-screen px-4 md:px-10 lg:px-20 pt-32`}>
-            <div className='mt-10 text-opacity-60 w-full'>
+            <div className='mt-16 md:mt-10 text-opacity-60 w-full'>
                 <div>
                     <div className='w-full flex justify-center'>
                         <motion.h1 
@@ -249,9 +260,10 @@ const AboutSection = ()=>{
                         </motion.h1>
 
                     </div>
+                    
                     <div className='w-full flex justify-center'>
                         <motion.h1 
-                            className='mt-6 w-fit text-8xl font-playFair text-white text-center'
+                            className='mt-6 w-fit text-5xl md:text-8xl font-playFair text-white text-center'
                             initial={{
                                 opacity: 0,
                                 height: 0,
@@ -274,7 +286,7 @@ const AboutSection = ()=>{
                 </h1> */}
                 <div className='w-full flex justify-center'>
                     <motion.h1 
-                        className='mt-6 w-fit text-8xl font-playFair text-white text-center'
+                        className='mt-[-20px] w-3/4 md:mt-6 md:w-fit text-3xl md:text-8xl font-playFair text-white text-center'
                         initial={{
                             opacity: 0,
                             height: 0,
@@ -377,7 +389,7 @@ const ServiceCard = ({title, detail, count})=>{
 const ServiceSection = ({serviceSlider})=>{
     
     return (
-        <div className=''>
+        <div className='' id="services">
             {/* <Canvas
                 style={{height: screenHeight}}
             >
@@ -390,14 +402,15 @@ const ServiceSection = ({serviceSlider})=>{
                     <div className='w-[5000px] flex items-center h-screen'>
                         <div className='servicePanel inline-block w-[800px] h-96 ml-20 mt-4'>
                             <div className='flex h-full items-center'>
-                                <div className='text-opacity-60 w-full flex justify-center md:justify-center md:px-10'>
-                                    <h1 className='mt-10 font-playFair text-[250px] md:text-[180px] text-white'>Services</h1>
+                                <div className='text-opacity-60 w-full flex justify-left md:justify-center md:px-10'>
+                                    <h1 className='mt-10 font-playFair text-8xl md:text-[180px] text-white'>Services</h1>
                                 </div>
                             </div>
                         </div>
                         <ServiceCard title="Design" detail="I specialize in creating mesmerizing and visually striking website and application designs that are meticulously tailored to elevate your brand's online presence." count={"01"}/>
                         <ServiceCard title="Development" detail="I provide a distinctive skill set that seamlessly integrates my design expertise with my development capabilities. By leveraging my combined skill set, I create exceptional digital solutions that effectively capture attention and ensure user satisfaction throughout the development process. " count={"02"}/>
-                        <ServiceCard title="Deployment" detail="Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita obcaecati est praesentium sapiente dicta recusandae, neque sit voluptate maxime doloribus molestias eius aliquam hic explicabo nemo sint quidem voluptatibus repudiandae." count={"03"}/>
+                        <ServiceCard title="Mobile App" detail="I specialize in creating high-quality mobile apps for iOS and Android. From concept to deployment, I deliver user-friendly, visually appealing apps that meet your goals. Whether you need native or cross-platform development, I can bring your mobile project to life." count={"03"}/>
+
                         
                         
                     </div>
@@ -407,23 +420,63 @@ const ServiceSection = ({serviceSlider})=>{
     )
 
 }
-const WorkCard = ()=>{
+const WorkCard = ({work})=>{
     return(
-        <div className='panel relative inline-block w-[600px] h-[400px] mx-20 mt-4 bg-slate-500'>
-
-            <div className='bg-gradient-to-t from-black to-black/0 flex justify-between items-center px-6 w-full h-20 absolute bottom-0'>
-                <h1>Project Name</h1>
+        <div className='panel relative inline-block w-[650px] h-[400px] mx-14 mt-4 bg-slate-500' style={{backgroundImage: `url(${work.img})`, backgroundSize: 'cover'}}>
+            <div className='bg-gradient-to-t from-black to-black/0 flex justify-between items-center px-6 w-full h-20 absolute bottom-0' >
+                {/* <img src={work.img} /> */}
+                <h1>{work.name}</h1>
                 <div className='flex gap-4 items-center'>
                     {/* <AiFillGithub className='text-2xl text-white' /> */}
-                    <GoLinkExternal className='text-xl text-white'/>
+                    <a href={work.url} target='blank'>
+                        <GoLinkExternal className='text-xl text-white'/>
+                    </a>
                 </div>
             </div>
         </div>
     )
 }
 const WorksSection = ({slider})=>{
+    const works = [
+        {
+            name: "Habtamu Coffee Export",
+            url: "https://habtamucoffee.com",
+            img: habtamuImg,
+            git: ""
+        },
+        {
+            name: "Addis Ababa Technology Bureau",
+            url: "https://addis-ababa-city.vercel.app/",
+            img: itdb,
+            git: ""
+        },
+        {
+            name: "Ethio datasets",
+            url: "https://ethiodatasets.com/",
+            img: ethioDat,
+            git: ""
+        },
+        {
+            name: "Shadiem Media PLC ",
+            url: "https://shadiem.com",
+            img: shadiem,
+            git: ""
+        },
+        {
+            name: "Three.js Graveyard ",
+            url: "https://threejsgraveyard.netlify.app/",
+            img: threeGrave,
+            git: ""
+        },
+        {
+            name: "A2SV Demo website",
+            url: "https://a2-sv-community-portal-7oq7.vercel.app/",
+            img: A2SV,
+            git: ""
+        },
+    ]
     return(
-        <div ref={slider} className=' h-screen'>
+        <div ref={slider} className=' h-screen' id="works">
             <div className='overflow-x-hidden'>
                 <div className='w-[8000px] flex items-center h-screen'>
                     <div className='panel inline-block text-opacity-60 justify-center md:justify-start md:px-20 lg:px-20'>
@@ -432,12 +485,10 @@ const WorksSection = ({slider})=>{
                         </div>
                     </div>
                     <div className='w-[7000px] inline-block'>
-                        <WorkCard />
-                        <WorkCard />
-                        <WorkCard />
-                        <WorkCard />
-                        <WorkCard />
-                        <WorkCard />
+                        {works.map((work)=>(
+                            <WorkCard work={work}/>
+                        ))}
+                        
                     </div>
                 </div>
             </div>
@@ -447,8 +498,8 @@ const WorksSection = ({slider})=>{
 
 const ContactSection = ()=>{
     return(
-        <div className='mt-10 h-[700px] flex items-center text-opacity-60 w-full px-4 md:px-20 lg:px-20'>
-            <div className='pl-28'>
+        <div className='mt-10 h-[700px] flex items-center text-opacity-60 w-full px-4 md:px-20 lg:px-20' id="contact">
+            <div className='pl-10 md:pl-28'>
                 <h1 className='font-playFair text-[50px] md:text-[80px] w-2/3 leading-snug text-white'>Do you have a project in mind?</h1>
                 <div className='ml-4  w-full'>
                     <div className='flex items-center gap-4 text-xl mt-6'>
@@ -456,9 +507,9 @@ const ContactSection = ()=>{
                         <h1>Contact me at: <a href="mailto:abelgetahun55@gmail.com" className='text-gray-500'>abelgetahun55@gmail.com</a></h1>
                     </div>
                     <div className='flex justify-between w-[500px] mt-12'>
-                        <span className='flex gap-2 items-center'>LinkedIn < FiExternalLink/></span>
-                        <span className='flex gap-2 items-center'>Github < FiExternalLink/></span>
-                        <span className='flex gap-2 items-center'>Telegram < FiExternalLink/></span>
+                        <a href="https://www.linkedin.com/in/abel-getahun" target='blank'><span className='flex gap-2 items-center'>LinkedIn < FiExternalLink/></span></a>
+                        <a href='https://github.com/abelops' target='blank'><span className='flex gap-2 items-center'>Github < FiExternalLink/></span></a>
+                        <a href='https://t.me/abelgetahun' target='blank'><span className='flex gap-2 items-center'>Telegram < FiExternalLink/></span></a>
                     </div>
                 </div>
             </div>

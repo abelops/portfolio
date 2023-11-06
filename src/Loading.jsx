@@ -21,7 +21,7 @@ function CustomLoader() {
             <div className={`absolute flex w-full h-screen justify-center items-center mt-14 ml-14 ${loadingState && 'hidden'} `}>
                 <CircularProgress progress={progress}/>
             </div>
-            <h1 className="font-absolutHeadline text-2xl text-[#8fb3b3]">{progress}%</h1>
+            <h1 className="font-absolutHeadline text-2xl text-[#8fb3b3]">{progress.toFixed(1)}%</h1>
         </div>
     ) 
     
